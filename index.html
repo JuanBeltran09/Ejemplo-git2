@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Craft & Code — El Arte del Diseño Web Moderno</title>
+  <meta name="description" content="Una experiencia interactiva para aprender y explorar la anatomía, principios y herramientas del diseño web moderno.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Ambient Glow Cursor Follower -->
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <!-- Navigation -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="logo">
+        <span class="logo-icon"><i class="fa-solid fa-layer-group"></i></span>
+        <span class="logo-text">Craft<span class="highlight">&</span>Code</span>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#hero" class="nav-link active">Inicio</a>
+        <a href="#principles" class="nav-link">Principios</a>
+        <a href="#anatomy" class="nav-link">Anatomía Web</a>
+        <a href="#lab" class="nav-link">Laboratorio Studio</a>
+        <a href="#quiz" class="nav-link">Quiz de Diseño</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" title="Cambiar tema">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+        <a href="#lab" class="btn btn-primary btn-sm">Abrir Lab <i class="fa-solid fa-wand-magic-sparkles"></i></a>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menú">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-grid-bg"></div>
+    <div class="container hero-container">
+      <div class="hero-content">
+        <div class="badge">
+          <span class="badge-dot"></span>
+          <span>El Arte y Ciencia de la Web</span>
+        </div>
+        <h1 class="hero-title">
+          Diseño Web: Donde el <span class="gradient-text">Arte</span> encuentra al <span class="gradient-text-alt">Código</span>
+        </h1>
+        <p class="hero-subtitle">
+          Explora la estética moderna, la tipografía expresiva, los sistemas de color y la interactividad que dan vida a las experiencias digitales extraordinarias.
+        </p>
+
+        <div class="hero-cta">
+          <a href="#lab" class="btn btn-primary btn-lg">
+            <span>Explorar Laboratorio Interactivo</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <a href="#principles" class="btn btn-outline btn-lg">
+            <i class="fa-solid fa-compass"></i>
+            <span>Ver Principios</span>
+          </a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-num" id="statType">100%</span>
+            <span class="stat-label">Responsive & Adaptativo</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-num">60 FPS</span>
+            <span class="stat-label">Interacciones Fluídas</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-num">HTML5 / CSS3</span>
+            <span class="stat-label">Estándares Limpios</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Visual Interactive Card -->
+      <div class="hero-visual">
+        <div class="code-card-wrapper">
+          <div class="code-card-header">
+            <div class="window-dots">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
+            </div>
+            <div class="window-title">design-system.css</div>
+            <div class="window-action"><i class="fa-solid fa-code"></i></div>
+          </div>
+          <div class="code-card-body">
+            <pre><code><span class="c-keyword">:root</span> {
+  <span class="c-property">--primary-font</span>: <span class="c-string">'Outfit', sans-serif</span>;
+  <span class="c-property">--brand-accent</span>: <span class="c-value">#06b6d4</span>;
+  <span class="c-property">--glass-blur</span>: <span class="c-value">blur(16px)</span>;
+  <span class="c-property">--visual-harmony</span>: <span class="c-string">golden-ratio</span>;
+}
+
+<span class="c-selector">.modern-hero</span> {
+  <span class="c-property">display</span>: <span class="c-value">grid</span>;
+  <span class="c-property">place-items</span>: <span class="c-value">center</span>;
+  <span class="c-property">animation</span>: <span class="c-value">smoothReveal 0.8s ease</span>;
+}</code></pre>
+
+            <div class="interactive-preview-pill">
+              <div class="preview-swatch" id="heroSwatch"></div>
+              <span class="preview-text">Color Activo: <strong id="heroColorHex">#06B6D4</strong></span>
+              <button class="btn-icon-sm" id="randomizeHeroColor" title="Cambiar color del héroe">
+                <i class="fa-solid fa-arrows-rotate"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Principles Section -->
+  <section class="section principles-section" id="principles">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-eyebrow"><i class="fa-solid fa-shapes"></i> FUNDAMENTOS</span>
+        <h2 class="section-title">Los 5 Pilares del Diseño Web de Excelencia</h2>
+        <p class="section-subtitle">
+          Un buen diseño web no es solo apariencia bonita, es la síntesis perfecta entre utilidad, accesibilidad y emoción.
+        </p>
+      </div>
+
+      <div class="principles-grid">
+        <!-- Card 1 -->
+        <div class="card principle-card">
+          <div class="card-icon icon-cyan">
+            <i class="fa-solid fa-font"></i>
+          </div>
+          <h3 class="card-title">1. Jerarquía & Tipografía</h3>
+          <p class="card-desc">
+            La tipografía guía la mirada del usuario. Utiliza contraste de pesos, tamaños calculados y ritmo vertical para estructurar la lectura sin esfuerzo.
+          </p>
+          <div class="card-tag">Lecturabilidad & Ritmo</div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card principle-card">
+          <div class="card-icon icon-violet">
+            <i class="fa-solid fa-palette"></i>
+          </div>
+          <h3 class="card-title">2. Teoría del Color</h3>
+          <p class="card-desc">
+            Paletas armónicas con reglas de 60-30-10. Los colores dominantes comunican identidad, mientras que los acentos llaman a la acción rápida.
+          </p>
+          <div class="card-tag">Emoción & Foco</div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card principle-card">
+          <div class="card-icon icon-emerald">
+            <i class="fa-solid fa-table-cells"></i>
+          </div>
+          <h3 class="card-title">3. Grids & Layout Responsivo</h3>
+          <p class="card-desc">
+            Sistemas flexbox y grid fluido. Garantizan que la interfaz se adapte elegantemente desde un teléfono hasta un monitor ultrapanorámico.
+          </p>
+          <div class="card-tag">Adaptabilidad Total</div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="card principle-card">
+          <div class="card-icon icon-amber">
+            <i class="fa-solid fa-bolt"></i>
+          </div>
+          <h3 class="card-title">4. Microinteracciones</h3>
+          <p class="card-desc">
+            Pequeñas animaciones que devuelven feedback táctil y visual al usuario. Transforman una navegación estática en una experiencia viva.
+          </p>
+          <div class="card-tag">Feedback & Motion</div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="card principle-card">
+          <div class="card-icon icon-rose">
+            <i class="fa-solid fa-universal-access"></i>
+          </div>
+          <h3 class="card-title">5. Accesibilidad & Performance</h3>
+          <p class="card-desc">
+            Diseñar para todos los usuarios independientemente de sus capacidades. Alto contraste, navegación por teclado y tiempos de carga relámpago.
+          </p>
+          <div class="card-tag">Inclusión & Velocidad</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Anatomy Section -->
+  <section class="section anatomy-section" id="anatomy">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-eyebrow"><i class="fa-solid fa-sitemap"></i> ESTRUCTURA WEB</span>
+        <h2 class="section-title">Anatomía Interactiva de una Página Web</h2>
+        <p class="section-subtitle">Haz clic en cada componente del mockup para explorar sus responsabilidades en código HTML/CSS.</p>
+      </div>
+
+      <div class="anatomy-layout">
+        <!-- Interactive Canvas Mockup -->
+        <div class="mockup-window">
+          <div class="mockup-bar">
+            <div class="mockup-dots"><span></span><span></span><span></span></div>
+            <div class="mockup-url">https://mi-sitio-increible.com</div>
+          </div>
+          <div class="mockup-canvas">
+            <div class="anatomy-box anatomy-header" data-part="header">
+              <span>&lt;header&gt; Navbar & Brand</span>
+            </div>
+            <div class="anatomy-box anatomy-hero" data-part="hero">
+              <span>&lt;section class="hero"&gt; Hero Title & CTA</span>
+            </div>
+            <div class="anatomy-main-group">
+              <div class="anatomy-box anatomy-content" data-part="content">
+                <span>&lt;main&gt; Contenido Principal (Cards & Grid)</span>
+              </div>
+              <div class="anatomy-box anatomy-sidebar" data-part="sidebar">
+                <span>&lt;aside&gt; Sidebar & Filtros</span>
+              </div>
+            </div>
+            <div class="anatomy-box anatomy-footer" data-part="footer">
+              <span>&lt;footer&gt; Pie de Página & Links</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Anatomy Info Panel -->
+        <div class="anatomy-details-card" id="anatomyDetails">
+          <div class="details-badge" id="anatomyBadge">Componente Seleccionado</div>
+          <h3 class="details-title" id="anatomyTitle">Haz clic en una sección</h3>
+          <p class="details-desc" id="anatomyDesc">
+            Selecciona cualquier bloque del mapa interactivo de la izquierda para ver su función principal, accesibilidad recomendada y el código CSS clave.
+          </p>
+          
+          <div class="code-snippet-box">
+            <div class="snippet-header">
+              <span>Código Semántico</span>
+              <button class="btn-copy-sm" id="copyCodeBtn"><i class="fa-regular fa-copy"></i> Copiar</button>
+            </div>
+            <pre><code id="anatomyCodeSnippet">// Toca cualquier elemento del diagrama para ver su código HTML/CSS</code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Studio Lab Section -->
+  <section class="section lab-section" id="lab">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-eyebrow"><i class="fa-solid fa-flask"></i> EXPERIMENTACIÓN LIVE</span>
+        <h2 class="section-title">Laboratorio Studio de Diseño Web</h2>
+        <p class="section-subtitle">
+          Modifica los parámetros en tiempo real para observar cómo cambia el aspecto visual, la legibilidad y la estructura.
+        </p>
+      </div>
+
+      <!-- Lab Tabs -->
+      <div class="lab-tabs">
+        <button class="lab-tab-btn active" data-tab="typo-lab"><i class="fa-solid fa-text-height"></i> Tipografía</button>
+        <button class="lab-tab-btn" data-tab="color-lab"><i class="fa-solid fa-droplet"></i> Paletas de Color</button>
+        <button class="lab-tab-btn" data-tab="layout-lab"><i class="fa-solid fa-border-all"></i> Layout & Grid</button>
+        <button class="lab-tab-btn" data-tab="fx-lab"><i class="fa-solid fa-sparkles"></i> Efectos & Glass</button>
+      </div>
+
+      <!-- Tab Content 1: Typography -->
+      <div class="lab-panel active" id="typo-lab">
+        <div class="lab-grid">
+          <div class="lab-controls-card">
+            <h4><i class="fa-solid fa-sliders"></i> Controles Tipográficos</h4>
+            
+            <div class="control-group">
+              <label for="fontSelect">Fuente de Titular:</label>
+              <select id="fontSelect" class="form-select">
+                <option value="'Outfit', sans-serif">Outfit (Expresiva Sans)</option>
+                <option value="'Inter', sans-serif">Inter (Limpia & Funcional)</option>
+                <option value="'JetBrains Mono', monospace">JetBrains Mono (Código & Tech)</option>
+              </select>
+            </div>
+
+            <div class="control-group">
+              <div class="control-label-row">
+                <label for="fontSizeRange">Tamaño de Fuente:</label>
+                <span id="fontSizeVal">32px</span>
+              </div>
+              <input type="range" id="fontSizeRange" min="20" max="64" value="32" class="form-range">
+            </div>
+
+            <div class="control-group">
+              <div class="control-label-row">
+                <label for="lineHeightRange">Interlineado (Line Height):</label>
+                <span id="lineHeightVal">1.3</span>
+              </div>
+              <input type="range" id="lineHeightRange" min="1.0" max="2.0" step="0.1" value="1.3" class="form-range">
+            </div>
+
+            <div class="control-group">
+              <div class="control-label-row">
+                <label for="letterSpacingRange">Espaciado de Letras:</label>
+                <span id="letterSpacingVal">0px</span>
+              </div>
+              <input type="range" id="letterSpacingRange" min="-2" max="6" step="0.5" value="0" class="form-range">
+            </div>
+          </div>
+
+          <div class="lab-preview-card">
+            <div class="preview-badge">Live Preview</div>
+            <div class="typo-demo-target" id="typoDemoTarget">
+              <h2 id="typoHeadingDemo">El Diseño Web transforma ideas en experiencias interactivas universales.</h2>
+              <p id="typoParagraphDemo">
+                La combinación armónica de peso visual, tamaño tipográfico y espacio en blanco garantiza que los visitantes comprendan tu mensaje en cuestión de segundos.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab Content 2: Color Palettes -->
+      <div class="lab-panel" id="color-lab">
+        <div class="color-presets-wrapper">
+          <div class="presets-header">
+            <h4>Selecciona una paleta de tendencia o crea tu propia combinación:</h4>
+          </div>
+
+          <div class="palettes-grid">
+            <!-- Palette 1 -->
+            <div class="palette-card active" data-theme="cyber">
+              <div class="palette-swatches">
+                <span style="background: #0b0f19;"></span>
+                <span style="background: #151c2e;"></span>
+                <span style="background: #06b6d4;"></span>
+                <span style="background: #8b5cf6;"></span>
+              </div>
+              <div class="palette-info">
+                <h5>Cyber Neon Dark</h5>
+                <p>Futurista, alto contraste</p>
+              </div>
+            </div>
+
+            <!-- Palette 2 -->
+            <div class="palette-card" data-theme="sunset">
+              <div class="palette-swatches">
+                <span style="background: #180e29;"></span>
+                <span style="background: #2a163d;"></span>
+                <span style="background: #f43f5e;"></span>
+                <span style="background: #fb923c;"></span>
+              </div>
+              <div class="palette-info">
+                <h5>Sunset Synth</h5>
+                <p>Cálido, vibrante, nocturno</p>
+              </div>
+            </div>
+
+            <!-- Palette 3 -->
+            <div class="palette-card" data-theme="emerald">
+              <div class="palette-swatches">
+                <span style="background: #061e19;"></span>
+                <span style="background: #0b382f;"></span>
+                <span style="background: #10b981;"></span>
+                <span style="background: #34d399;"></span>
+              </div>
+              <div class="palette-info">
+                <h5>Emerald Glass</h5>
+                <p>Orgánico, elegante, fresco</p>
+              </div>
+            </div>
+
+            <!-- Palette 4 -->
+            <div class="palette-card" data-theme="nordic">
+              <div class="palette-swatches">
+                <span style="background: #0f172a;"></span>
+                <span style="background: #1e293b;"></span>
+                <span style="background: #38bdf8;"></span>
+                <span style="background: #94a3b8;"></span>
+              </div>
+              <div class="palette-info">
+                <h5>Nordic Minimal</h5>
+                <p>Sobrio, corporativo, refinado</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="color-actions">
+            <button class="btn btn-primary" id="copyPaletteCss"><i class="fa-solid fa-code"></i> Copiar Variables CSS de la Paleta</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab Content 3: Layout & Grid -->
+      <div class="lab-panel" id="layout-lab">
+        <div class="lab-grid">
+          <div class="lab-controls-card">
+            <h4><i class="fa-solid fa-table-cells-large"></i> Parámetros de Rejilla</h4>
+
+            <div class="control-group">
+              <label for="gridModeSelect">Modo de Layout:</label>
+              <select id="gridModeSelect" class="form-select">
+                <option value="grid-3">CSS Grid (3 Columnas)</option>
+                <option value="grid-2">CSS Grid (2 Columnas)</option>
+                <option value="flex-row">Flexbox (Fila con Wrap)</option>
+              </select>
+            </div>
+
+            <div class="control-group">
+              <div class="control-label-row">
+                <label for="gapRange">Espaciado (Gap):</label>
+                <span id="gapVal">24px</span>
+              </div>
+              <input type="range" id="gapRange" min="8" max="48" step="4" value="24" class="form-range">
+            </div>
+
+            <div class="control-group">
+              <div class="control-label-row">
+                <label for="radiusRange">Border Radius:</label>
+                <span id="radiusVal">16px</span>
+              </div>
+              <input type="range" id="radiusRange" min="0" max="32" step="2" value="16" class="form-range">
+            </div>
+          </div>
+
+          <div class="lab-preview-card">
+            <div class="preview-badge">Visualizador de Contenedores</div>
+            <div class="layout-demo-target grid-3" id="layoutDemoTarget">
+              <div class="demo-grid-box">Card Item 01</div>
+              <div class="demo-grid-box">Card Item 02</div>
+              <div class="demo-grid-box">Card Item 03</div>
+              <div class="demo-grid-box">Card Item 04</div>
+              <div class="demo-grid-box">Card Item 05</div>
+              <div class="demo-grid-box">Card Item 06</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab Content 4: Effects & Glass -->
+      <div class="lab-panel" id="fx-lab">
+        <div class="lab-grid">
+          <div class="lab-controls-card">
+            <h4><i class="fa-solid fa-wand-magic-sparkles"></i> Glassmorphism & Sombra</h4>
+
+            <div class="control-group">
+              <div class="control-label-row">
+                <label for="blurRange">Desenfoque (Backdrop Blur):</label>
+                <span id="blurVal">16px</span>
+              </div>
+              <input type="range" id="blurRange" min="0" max="40" value="16" class="form-range">
+            </div>
+
+            <div class="control-group">
+              <div class="control-label-row">
+                <label for="opacityRange">Opacidad del Fondo:</label>
+                <span id="opacityVal">0.15</span>
+              </div>
+              <input type="range" id="opacityRange" min="0.05" max="0.60" step="0.05" value="0.15" class="form-range">
+            </div>
+
+            <div class="control-group">
+              <div class="control-label-row">
+                <label for="shadowRange">Intensidad del Brillo (Glow):</label>
+                <span id="shadowVal">25px</span>
+              </div>
+              <input type="range" id="shadowRange" min="0" max="50" value="25" class="form-range">
+            </div>
+          </div>
+
+          <div class="lab-preview-card glass-preview-bg">
+            <div class="glass-demo-card" id="glassDemoCard">
+              <div class="glass-icon"><i class="fa-solid fa-gem"></i></div>
+              <h3>Glassmorphism UI</h3>
+              <p>Efecto translúcido moderno combinando `backdrop-filter`, bordes sutiles con gradiente y sombras proyectadas.</p>
+              <button class="btn btn-primary btn-sm">Boton Cristal</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Interactive Quiz Section -->
+  <section class="section quiz-section" id="quiz">
+    <div class="container">
+      <div class="quiz-card">
+        <div class="quiz-header text-center">
+          <span class="section-eyebrow"><i class="fa-solid fa-graduation-cap"></i> AUTOEVALUACIÓN</span>
+          <h2 class="section-title">¿Cuál es tu Arquetipo de Diseñador Web?</h2>
+          <p class="section-subtitle">Responde 4 breves preguntas para descubrir tu perfil y estilo dominante.</p>
+        </div>
+
+        <div class="quiz-body" id="quizBody">
+          <div class="quiz-progress">
+            <div class="progress-bar" id="quizProgressBar" style="width: 25%;"></div>
+          </div>
+          
+          <div class="quiz-question-container">
+            <span class="quiz-step" id="quizStep">Pregunta 1 de 4</span>
+            <h3 class="quiz-question" id="quizQuestion">Cuando inicias un nuevo proyecto web, ¿en qué te enfocas primero?</h3>
+
+            <div class="quiz-options" id="quizOptions">
+              <!-- Options rendered via JS -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Quiz Result Screen (hidden by default) -->
+        <div class="quiz-result hidden" id="quizResult">
+          <div class="result-badge"><i class="fa-solid fa-award"></i> Tu Arquetipo de Diseño</div>
+          <h3 class="result-title" id="resultTitle">El Arquitecto del Grid</h3>
+          <p class="result-desc" id="resultDesc">
+            Amas la precisión, los sistemas de diseño estrictos, las retículas matemáticas y la perfecta alineación tipográfica.
+          </p>
+          <button class="btn btn-primary" id="restartQuizBtn"><i class="fa-solid fa-rotate-left"></i> Repetir Quiz</button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer"> 
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <a href="#" class="logo">
+          <span class="logo-icon"><i class="fa-solid fa-layer-group"></i></span>
+          <span class="logo-text">Craft<span class="highlight">&</span>Code</span>
+        </a>
+        <p class="footer-tagline">
+          Inspirando la creación de la web moderna a través del diseño con propósito y código limpio.
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Navegación</h4>
+          <a href="#hero">Inicio</a>
+          <a href="#principles">Principios</a>
+          <a href="#anatomy">Anatomía Web</a>
+          <a href="#lab">Laboratorio</a>
+        </div>
+        <div class="footer-col">
+          <h4>Recursos</h4>
+          <a href="https://developer.mozilla.org" target="_blank" rel="noopener">MDN Web Docs</a>
+          <a href="https://w3.org" target="_blank" rel="noopener">W3C Standards</a>
+          <a href="https://fonts.google.com" target="_blank" rel="noopener">Google Fonts</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <div class="container footer-bottom-content">
+        <p>&copy; 2026 Craft & Code — Creado con HTML, CSS y JavaScript Vanilla.</p>
+        <div class="social-links">
+          <a href="#" aria-label="Github"><i class="fa-brands fa-github"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" aria-label="Codepen"><i class="fa-brands fa-codepen"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Custom Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
